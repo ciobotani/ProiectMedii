@@ -1,0 +1,40 @@
+﻿@page
+@model ProiectMedii.Pages.Inrolari.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Inrolare</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inrolare.Curs)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inrolare.Curs.Denumire)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inrolare.Student)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inrolare.Student.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Inrolare.Nota)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Inrolare.Nota)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Inrolare.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+﻿@page
+@model ProiectMedii.Pages.Inrolari.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Inrolare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Inrolare.ID" />
+            <div class="form-group">
+                <label asp-for="Inrolare.CursID" class="control-label"></label>
+                <select asp-for="Inrolare.CursID" class="form-control" asp-items="ViewBag.CursID"></select>
+                <span asp-validation-for="Inrolare.CursID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inrolare.StudentID" class="control-label"></label>
+                <select asp-for="Inrolare.StudentID" class="form-control" asp-items="ViewBag.StudentID"></select>
+                <span asp-validation-for="Inrolare.StudentID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inrolare.Nota" class="control-label"></label>
+                <input asp-for="Inrolare.Nota" class="form-control" />
+                <span asp-validation-for="Inrolare.Nota" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
